@@ -55,4 +55,17 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>develop</id>
+        </profile>
+    </profiles>
+
+
 </project>
