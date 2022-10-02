@@ -1,6 +1,7 @@
 package pl.niepracuj.model.dto;
 
 import lombok.*;
+import pl.niepracuj.model.enums.SeniorityEnum;
 
 @Getter
 @Setter
@@ -11,6 +12,6 @@ public class SeniorityDto {
 
     private Long id;
 
-    private String name;
+    private SeniorityEnum name;
 
 }
