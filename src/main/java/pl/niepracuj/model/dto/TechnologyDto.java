@@ -1,6 +1,7 @@
 package pl.niepracuj.model.dto;
 
 import lombok.*;
+import pl.niepracuj.model.enums.TechnologyEnum;
 
 @Getter
 @Setter
@@ -10,5 +11,5 @@ import lombok.*;
 public class TechnologyDto {
     private Long id;
 
-    private String name;
+    private TechnologyEnum name;
 }

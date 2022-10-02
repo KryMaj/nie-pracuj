@@ -18,7 +18,7 @@ public class Level {
 
     private String name;
 
-    private Integer size;
+    private Integer score;
 
 
 }

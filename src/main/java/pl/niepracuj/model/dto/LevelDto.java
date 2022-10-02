@@ -13,5 +13,5 @@ public class LevelDto {
 
     private String name;
 
-    private Integer size;
+    private Integer score;
 }
