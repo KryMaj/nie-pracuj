@@ -21,7 +21,6 @@ public class Advertisement {
 
     private String name;
 
-
     private Instant publishDate;
 
     private Instant expireDate;

@@ -11,7 +11,7 @@ public class SkillDto {
 
     private Long id;
 
-    private String address;
+    private String name;
 
-    private Long levelId;
+    private LevelDto level;
 }
