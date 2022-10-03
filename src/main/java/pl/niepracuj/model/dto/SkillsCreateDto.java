@@ -7,11 +7,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CityDto {
-
-    private Long id;
+public class SkillsCreateDto {
 
     private String name;
 
-    private StateDto stateDto;
+    private Long levelId;
 }

@@ -17,9 +17,8 @@ public class Skill {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String address;
+    private String name;
 
-    private Long levelId;
 
     @ManyToMany(mappedBy = "skills")
     Set<Advertisement> advertisements;

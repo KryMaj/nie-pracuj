@@ -1,9 +1,7 @@
 package pl.niepracuj.model.dto;
 
 import lombok.*;
-import pl.niepracuj.model.entity.*;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.Set;
@@ -13,15 +11,10 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AdvertisementDto {
+public class AdvertisementCreateDto {
 
-
-    private Long id;
 
     private String name;
-
-
-    private Instant publishDate;
 
     private Instant expireDate;
 
@@ -31,19 +24,13 @@ public class AdvertisementDto {
 
     private String description;
 
+    private Long companyId;
 
-    private TechnologyDto technology;
+    private Long technologyId;
 
+    private Long seniorityId;
 
-    private SeniorityDto seniority;
+    private Long cityId;
 
-
-    private CityDto city;
-
-
-    private CompanyDto company;
-
-
-   private  Set<SkillDto> skills;
-
+    private Set<SkillsCreateDto> skills;
 }
