@@ -9,6 +9,7 @@ import pl.niepracuj.model.dto.SkillDto;
 import pl.niepracuj.model.entity.Advertisement;
 import pl.niepracuj.model.entity.Skill;
 
+import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.stream.Collectors;
 

@@ -6,6 +6,7 @@ import pl.niepracuj.model.entity.*;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Getter
@@ -20,10 +21,9 @@ public class AdvertisementDto {
 
     private String name;
 
+    private LocalDateTime publishDate;
 
-    private Instant publishDate;
-
-    private Instant expireDate;
+    private LocalDateTime expireDate;
 
     private Integer salaryFrom;
 

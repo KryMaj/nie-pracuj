@@ -2,10 +2,8 @@ package pl.niepracuj.model.mapper;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import pl.niepracuj.model.dto.CityDto;
 import pl.niepracuj.model.dto.SkillDto;
-import pl.niepracuj.model.dto.SkillsCreateDto;
-import pl.niepracuj.model.entity.City;
+import pl.niepracuj.model.dto.SkillCreateDto;
 import pl.niepracuj.model.entity.Skill;
 
 @Component
@@ -23,7 +21,7 @@ public class SkillMapper {
     }
 
 
-    public Skill toNewEntity(SkillsCreateDto skillsCreateDto) {
+    public Skill toNewEntity(SkillCreateDto skillsCreateDto) {
         return Skill.builder()
                 .name(skillsCreateDto.getName())
                 .build();
