@@ -1,10 +1,11 @@
-package pl.niepracuj.service;
+package pl.niepracuj.service.seniority;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.niepracuj.model.dto.SeniorityDto;
 import pl.niepracuj.model.mapper.SeniorityMapper;
 import pl.niepracuj.repository.SeniorityRepository;
+import pl.niepracuj.service.seniority.SeniorityService;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class SeniorityServiceImpl implements SeniorityService{
+public class SeniorityServiceImpl implements SeniorityService {
 
     private final SeniorityRepository seniorityRepository;
 

@@ -1,10 +1,11 @@
-package pl.niepracuj.service;
+package pl.niepracuj.service.company;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.niepracuj.model.dto.CompanyDto;
 import pl.niepracuj.model.mapper.CompanyMapper;
 import pl.niepracuj.repository.CompanyRepository;
+import pl.niepracuj.service.company.CompanyService;
 
 import javax.transaction.Transactional;
 import java.util.List;

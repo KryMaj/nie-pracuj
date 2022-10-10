@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
 import pl.niepracuj.model.dto.AdvertisementSearchCriteriaDto;
 import pl.niepracuj.model.entity.Advertisement;
+import pl.niepracuj.model.entity.Advertisement_;
+import pl.niepracuj.model.entity.City_;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -23,21 +25,24 @@ public class AdvertisementSpecification implements Specification<Advertisement> 
                                  CriteriaBuilder criteriaBuilder) {
        return criteriaBuilder.and(advertisementNameLike(root, query, criteriaBuilder),
                 seniorityNameEquals(root, query, criteriaBuilder),
-               cityLike(root, query, criteriaBuilder));
+               technologyNameEquals(root, query, criteriaBuilder),
+               cityLike(root, query, criteriaBuilder),
+               salaryFromLessThanOrEqualTo(root, query, criteriaBuilder),
+        salaryToLessThanOrEqualTo(root, query, criteriaBuilder));
 
     }
 
     private Predicate advertisementNameLike(Root<Advertisement> root, CriteriaQuery<?> query,
                                             CriteriaBuilder criteriaBuilder){
       return   nonNull(criteriaDto.getName()) ?
-                criteriaBuilder.like(criteriaBuilder.lower(root.get("name")),"%" + criteriaDto.getName().toLowerCase() +"%"):
+                criteriaBuilder.like(criteriaBuilder.lower(root.get(Advertisement_.NAME)),"%" + criteriaDto.getName().toLowerCase() +"%"):
                 alwaysTruePredicate(criteriaBuilder);
     }
 
     private Predicate cityLike(Root<Advertisement> root, CriteriaQuery<?> query,
                                             CriteriaBuilder criteriaBuilder){
         return   nonNull(criteriaDto.getCityName()) ?
-                criteriaBuilder.like(criteriaBuilder.lower(root.get("city").get("name")),"%" + criteriaDto.getCityName().toLowerCase() +"%"):
+                criteriaBuilder.like(criteriaBuilder.lower(root.get(Advertisement_.CITY).get(City_.NAME)),"%" + criteriaDto.getCityName().toLowerCase() +"%"):
                 alwaysTruePredicate(criteriaBuilder);
     }
 
@@ -46,6 +51,27 @@ public class AdvertisementSpecification implements Specification<Advertisement> 
         return  nonNull(criteriaDto.getSeniorityName()) ?
                 criteriaBuilder.equal(root.get("seniority").get("name"), criteriaDto.getSeniorityName()):
                 alwaysTruePredicate(criteriaBuilder);
+    }
+
+    private Predicate technologyNameEquals(Root<Advertisement> root, CriteriaQuery<?> query,
+                                          CriteriaBuilder criteriaBuilder){
+        return  nonNull(criteriaDto.getTechnologyName()) ?
+                criteriaBuilder.equal(root.get("technology").get("name"), criteriaDto.getTechnologyName()):
+                alwaysTruePredicate(criteriaBuilder);
+    }
+
+    private Predicate salaryFromLessThanOrEqualTo(Root<Advertisement> root, CriteriaQuery<?> query,
+                               CriteriaBuilder criteriaBuilder){
+        return nonNull(criteriaDto.getSalaryTo()) ?
+                criteriaBuilder.lessThanOrEqualTo(root.get("salaryFrom"), criteriaDto.getSalaryTo())
+                :alwaysTruePredicate(criteriaBuilder);
+    }
+
+    private Predicate salaryToLessThanOrEqualTo(Root<Advertisement> root, CriteriaQuery<?> query,
+                                                  CriteriaBuilder criteriaBuilder){
+        return nonNull(criteriaDto.getSalaryFrom()) ?
+                criteriaBuilder.greaterThanOrEqualTo(root.get("salaryTo"), criteriaDto.getSalaryFrom())
+                :alwaysTruePredicate(criteriaBuilder);
     }
 
     private Predicate alwaysTruePredicate(CriteriaBuilder criteriaBuilder){

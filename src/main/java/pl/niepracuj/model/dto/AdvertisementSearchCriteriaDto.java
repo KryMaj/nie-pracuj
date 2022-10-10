@@ -3,6 +3,8 @@ package pl.niepracuj.model.dto;
 
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
+import pl.niepracuj.model.enums.SeniorityEnum;
+import pl.niepracuj.model.enums.TechnologyEnum;
 
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
@@ -19,8 +21,8 @@ public class AdvertisementSearchCriteriaDto {
     private Integer salaryFrom;
     private Integer salaryTo;
     private String companyName;
-    private String technologyName;
-    private String seniorityName;
+    private TechnologyEnum technologyName;
+    private SeniorityEnum seniorityName;
     private String cityName;
 
 }

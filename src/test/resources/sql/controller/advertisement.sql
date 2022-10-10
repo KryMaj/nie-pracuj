@@ -1,9 +1,11 @@
 INSERT INTO seniorities (id, name) VALUES
-    (1, 'JUNIOR');
+                                       (1, 'JUNIOR'),
+                                       (2, 'MID');
 
 
 INSERT INTO technologies (id, name) VALUES
-    (1, 'JAVA');
+                                        (1, 'JAVA'),
+                                        (2, 'HTML');
 
 
 
@@ -37,7 +39,9 @@ INSERT INTO levels (id, name, score) VALUES
                                          (2, 'JUNIOR', 2);
 
 INSERT INTO advertisements (id, description, expireDate, name, publishDate, salaryFrom, salaryTo, city_id, company_id, seniority_id, technology_id) VALUES
-    (1, 'Description', '2023-12-29T23:00:00', 'Ogłoszenie na java', '2022-12-29T23:00:00', 1000, 10000, 1, 1, 1, 1);
+(1, 'Description', '2023-12-29T23:00:00', 'Ogłoszenie na java', '2022-12-29T23:00:00', 1000, 10000, 2, 1, 1, 1),
+(2, 'Description', '2023-12-29T23:00:00', 'Ogłoszenie na java', '2022-12-29T23:00:00', 1000, 10000, 1, 1, 2, 1),
+(3, 'Description', '2023-12-29T23:00:00', 'Ogłoszenie na java', '2022-12-29T23:00:00', 1000, 10000, 1, 1, 1, 2);
 
 INSERT INTO skills (id, name, level_id) VALUES
     (1, 'Programming', 1);

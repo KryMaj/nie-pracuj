@@ -1,4 +1,4 @@
-package pl.niepracuj.service;
+package pl.niepracuj.service.seniority;
 
 import pl.niepracuj.model.dto.SeniorityDto;
 

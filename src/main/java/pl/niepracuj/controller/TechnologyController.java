@@ -4,9 +4,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import pl.niepracuj.model.dto.LevelDto;
 import pl.niepracuj.model.dto.TechnologyDto;
-import pl.niepracuj.service.TechnologyService;
+import pl.niepracuj.service.technology.TechnologyService;
 
 import java.util.List;
 

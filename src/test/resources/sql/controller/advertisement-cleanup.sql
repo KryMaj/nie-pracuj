@@ -1,0 +1,17 @@
+DELETE FROM advSkills CASCADE;
+
+DELETE FROM skills CASCADE;
+
+DELETE FROM advertisements CASCADE;
+
+DELETE FROM technologies CASCADE;
+
+DELETE FROM seniorities CASCADE;
+
+DELETE FROM companies CASCADE;
+
+DELETE FROM cities CASCADE;
+
+DELETE FROM states CASCADE;
+
+DELETE FROM levels CASCADE;

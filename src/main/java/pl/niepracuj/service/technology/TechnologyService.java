@@ -1,4 +1,4 @@
-package pl.niepracuj.service;
+package pl.niepracuj.service.technology;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

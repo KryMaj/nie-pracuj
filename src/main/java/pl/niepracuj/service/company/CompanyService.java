@@ -1,4 +1,4 @@
-package pl.niepracuj.service;
+package pl.niepracuj.service.company;
 
 import pl.niepracuj.model.dto.CompanyDto;
 
