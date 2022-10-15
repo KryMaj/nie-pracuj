@@ -9,7 +9,7 @@ import java.io.IOException;
 @Service
 public class FileServiceImpl implements FileService {
 
-    @Value("C:\\Users\\sylwi\\Desktop\\Nowy folder (2)")
+    @Value("${filepath}")
             private String path;
 
     @Override
