@@ -18,8 +18,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.authorizeRequests()
                 .antMatchers(HttpMethod.POST,
-                        "/adv/create","/company/create", "/level/create", "/seniority/create","/technology/create", "/adv/search**", "/user/login" )
+                        "/adv/create","/company/create", "/level/create", "/seniority/create","/technology/create",  "/user/login" )
                 .hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(HttpMethod.GET, "/**").permitAll()
                 .anyRequest().permitAll()
                 .and()
                 .httpBasic()
@@ -28,6 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     }
 
+    // "/adv/search**", wyrzucone z linijki 21
 
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.userDetailsService(userDetailsService);
